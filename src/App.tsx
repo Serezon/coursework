@@ -1,23 +1,26 @@
 import React from 'react';
-import { Store } from 'redux';
-import { Provider } from 'react-redux';
-import {Option, some, getOrElse} from 'fp-ts/es6/Option';
-import { constant } from 'fp-ts/es6/function';
+import {Store} from 'redux';
+import {Provider} from 'react-redux';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import createStore from './store/createStore';
+import { Nav } from './components';
 
-const maybeString: Option<string> = some("sdsdsd");
+import './global.sass';
 
 const store: Store = createStore();
 
-const App: React.FC = () => {
-  return (
-    <Provider store={store}>
-      <div>
-        {getOrElse(constant("None is here"))(maybeString)}
-      </div>
-    </Provider>
-  );
-};
+const App: React.FC = () => (
+  <Provider store={store}>
+    <Router>
+      <Nav />
+      <Switch>
+        <Route>
+          Hello, world!
+        </Route>
+      </Switch>
+    </Router>
+  </Provider>
+);
 
 export default App;
