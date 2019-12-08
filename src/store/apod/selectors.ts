@@ -4,12 +4,14 @@ import * as O from 'fp-ts/es6/Option';
 import { Either } from "fp-ts/es6/Either";
 import {pipe} from 'fp-ts/es6/pipeable';
 
+import { IApodData } from './interfaces';
+
 const getApod = (state: any) => pipe(
   prop('apod', state),
   O.fromNullable,
 );
 
-export const getApodDataSelector: (state: any) => O.Option<Either<String, Object>> = createSelector(
+export const getApodDataSelector: (state: any) => O.Option<Either<string, IApodData>> = createSelector(
   getApod,
   apodState => pipe(
     apodState,
