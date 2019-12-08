@@ -1,3 +1,7 @@
 import { combineReducers } from 'redux';
 
-export default combineReducers({});
+import { apodReducer } from './apod';
+
+export default combineReducers({
+  apod: apodReducer,
+});

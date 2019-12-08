@@ -5,7 +5,7 @@ import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom
 
 import createStore from './store/createStore';
 import {Header} from './components';
-import { APOD } from './containers';
+import {APOD} from './containers';
 
 import './global.sass';
 
@@ -17,9 +17,9 @@ const App: React.FC = () => (
       <Header/>
       <Switch>
         <Route path="/apod">
-          <APOD />
+          <APOD/>
         </Route>
-        <Redirect to="/apod" />
+        <Redirect to="/apod"/>
       </Switch>
     </Router>
   </Provider>

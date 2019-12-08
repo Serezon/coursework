@@ -1,3 +1,7 @@
-import { combineEpics } from 'redux-observable';
+import {combineEpics} from 'redux-observable';
 
-export default combineEpics();
+import {apodEpic} from './apod';
+
+export default combineEpics(
+  apodEpic
+);
