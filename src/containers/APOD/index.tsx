@@ -7,7 +7,7 @@ import {constant} from "fp-ts/es6/function";
 
 import {useFetching} from '../../utilities';
 import {getApodRequest, getApodDataSelector, IApodData} from '../../store/apod';
-import { Error } from '../../components';
+import { Error, Preloader } from '../../components';
 import { APODDisplay } from './APODDisplay';
 
 import './APOD.sass';
@@ -28,7 +28,7 @@ export const APOD: React.FC = () => {
             <APODDisplay apodData={data} />
           )
         )),
-        O.getOrElse(constant(<>Data is loading...</>))
+        O.getOrElse(constant(<Preloader />))
       )}
     </div>
   );
