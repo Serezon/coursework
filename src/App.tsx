@@ -7,6 +7,7 @@ import createStore from './store/createStore';
 import {Header} from './components';
 import {APOD} from './containers';
 
+import "react-datepicker/dist/react-datepicker.css";
 import './global.sass';
 
 const store: Store = createStore();

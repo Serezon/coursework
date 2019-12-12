@@ -1,5 +1,5 @@
-import {createSelector, Selector} from 'reselect';
-import {prop, path, identity} from 'ramda';
+import {createSelector} from 'reselect';
+import {prop} from 'ramda';
 import * as O from 'fp-ts/es6/Option';
 import { Either } from "fp-ts/es6/Either";
 import {pipe} from 'fp-ts/es6/pipeable';
@@ -16,5 +16,13 @@ export const getApodDataSelector: (state: any) => O.Option<Either<string, IApodD
   apodState => pipe(
     apodState,
     O.chain(state => O.fromNullable(prop('apodData', state)))
+  ),
+);
+
+export const getIsLoadingSelector: (state: any) => O.Option<boolean> = createSelector(
+  getApod,
+  apodState => pipe(
+    apodState,
+    O.map<any, boolean>(prop('loading'))
   ),
 );
