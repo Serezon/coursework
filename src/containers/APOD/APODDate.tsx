@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import { useDispatch } from "react-redux";
+import {useDispatch} from "react-redux";
 import DatePicker from 'react-datepicker';
 
-import { formatDate } from '../../utilities';
+import {formatDate} from '../../utilities';
 import {getApodRequest} from '../../store/apod';
 
 const yesterday: Date = new Date(Date.now() - (3600 * 24 * 1000));
