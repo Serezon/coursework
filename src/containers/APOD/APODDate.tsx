@@ -4,6 +4,7 @@ import DatePicker from 'react-datepicker';
 
 import {formatDate} from '../../utilities';
 import {getApodRequest} from '../../store/apod';
+import { api_key } from "../../utilities";
 
 const yesterday: Date = new Date(Date.now() - (3600 * 24 * 1000));
 
@@ -14,7 +15,8 @@ export const APODDate: React.FC = () => {
 
   useEffect(() => {
     dispatch(getApodRequest({
-      date: formatDate(date)
+      date: formatDate(date),
+      api_key
     }));
   }, [date]);
 

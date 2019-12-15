@@ -5,7 +5,7 @@ import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom
 
 import createStore from './store/createStore';
 import {Header} from './components';
-import {APOD} from './containers';
+import {APOD, Library} from './containers';
 
 import "react-datepicker/dist/react-datepicker.css";
 import './global.sass';
@@ -19,6 +19,9 @@ const App: React.FC = () => (
       <Switch>
         <Route path="/apod">
           <APOD/>
+        </Route>
+        <Route path="/library">
+          <Library />
         </Route>
         <Redirect to="/apod"/>
       </Switch>

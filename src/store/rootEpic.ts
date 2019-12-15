@@ -1,7 +1,9 @@
 import {combineEpics} from 'redux-observable';
 
-import {apodEpic} from './apod';
+import { apodEpics } from './apod';
+import { libraryEpics } from './library';
 
 export default combineEpics(
-  apodEpic
+  ...apodEpics,
+  ...libraryEpics,
 );

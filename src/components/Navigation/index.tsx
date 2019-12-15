@@ -9,7 +9,8 @@ interface Route {
 }
 
 const routes: Route[] = [
-  { to: '/apod', name: 'Astronomic Picture of the Day' }
+  { to: '/apod', name: 'Astronomic Picture of the Day' },
+  { to: '/library', name: 'Image and Video Library' }
 ];
 
 export const Navigation: React.FC = () => (
