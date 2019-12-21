@@ -13,9 +13,9 @@ export const libraryEpics: Epic[] = [
   action$ => action$.pipe(
     ofType(libraryTypes.GET_LIBRARY_DATA_REQUEST),
     mergeMap(({payload}) => ajax.getJSON(getUrl(libraryUrl, ['search'], payload)).pipe(
-      map(data => getLibraryDataResponse(right(data))),
+      map((response: any) => getLibraryDataResponse(right(response.collection.items))),
       catchError(error => of(getLibraryDataResponse(left(
-        pathOr('Unexpected error', ['response', 'error', 'message'], error)
+        pathOr('Unexpected error', ['response', 'reason'], error)
       ))))
     ))
   )
