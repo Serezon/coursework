@@ -1,5 +1,5 @@
 import {stringify} from 'query-string';
-import {join, mergeRight} from 'ramda';
+import {join} from 'ramda';
 import * as O from 'fp-ts/es6/Option';
 import { pipe } from 'fp-ts/es6/pipeable';
 import { constant } from 'fp-ts/es6/function';
